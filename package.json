@@ -34,5 +34,8 @@
     "printWidth": 120,
     "singleQuote": true,
     "trailingComma": "none"
+  },
+  "dependencies": {
+    "node": "^17.4.0"
   }
 }
