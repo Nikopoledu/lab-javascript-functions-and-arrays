@@ -6,6 +6,7 @@ function maxOfTwoNumbers(num1, num2) {
   else {
     return num2;
   }
+  
 }
 
 console.log(maxOfTwoNumbers(5,14));
@@ -27,10 +28,8 @@ console.log(findLongestWord(words))
 
 
 
-
-
 // Iteration #3: Calculate the sum
-const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+//const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 /*function sumNumbers(numbers){
   let sum = 0;
@@ -47,29 +46,76 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
   for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
 }
-
-
 console.log(sum)
 
 
 
-
 // Iteration #3.1 Bonus:
-function sum() {}
+
+const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function sumNumbers(list) {
+  // Repasando la lógica analizando el de Alex
+  let sum = 0;
+  for (let i = 0; i < list.length; i++) {
+  //Para comprender cada vuelta
+  //console.log(`La suma ahora mismo es ${sum}`);
+    sum += list[i];
+  } 
+  list.forEach((number) => {
+    sum += number;
+  });
+  return sum;
+}
+console.log(sumNumbers(numbers));
+
 
 
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
-const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
-
+// Hay conflicto con la const anterior numbers, cambiar o ejecutar por separado
+/*const numbers = [2, 6, 9, 10, 7, 4, 1, 9];
+function findAverage(lista) {
+  let media = 0;
+  let suma = 0;
+  lista.forEach((numero) => {
+    suma += numero;
+  });
+  media = suma / lista.length;
+  console.log(media);
+  return media;
+}
+findAverage(numbers);*/
 
 // Level 2: Array of strings
-const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+// Solución adaptada de Alex, existe conflicto con words que declaré en otro ejercicio
+/*
+const words = [
+  "seat",
+  "correspond",
+  "linen",
+  "motif",
+  "hole",
+  "smell",
+  "smart",
+  "chaos",
+  "fuel",
+  "palace",
+];
+function findAverage(lista) {
+  let media = 0;
+  let suma = 0;
+  lista.forEach((palabra) => {
+    suma += palabra.length;
+  });
+  media = suma / lista.length;
+  console.log(media);
+  return media;
+}
+findAverage(words);*/
+
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -94,9 +140,25 @@ function uniquifyArray() {}
 
 
 // Iteration #6: Find elements
-const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+/*const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist() {}*/
+const words = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+function palabro(word) {
+  if (words.includes(word)){
+    console.log('Verdadero');
+  }
+  else {
+    console.log('Falso');
+  }
+  
+  //return 'True';
+  //creo que no esta fina, buscar otra forma
+}
+console.log (palabro('matter'));
+
+
 
 
 
@@ -115,8 +177,16 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+//function howManyTimes() {}
+// mirar como convertir algo parecido a esto en una función
 
+const count = {};
+
+wordsCount.forEach(element => {
+  count[element] = (count[element] || 0) + 1;
+});
+
+console.log(count);
 
 
 // Iteration #8: Bonus
